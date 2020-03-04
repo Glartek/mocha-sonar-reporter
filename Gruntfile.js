@@ -1,70 +1,69 @@
 module.exports = function(grunt) {
-
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-blanket');
-  grunt.loadNpmTasks('grunt-coveralls');
-  grunt.loadNpmTasks('grunt-mocha-test');
+  grunt.loadNpmTasks("grunt-contrib-clean");
+  grunt.loadNpmTasks("grunt-contrib-copy");
+  grunt.loadNpmTasks("grunt-blanket");
+  grunt.loadNpmTasks("grunt-coveralls");
+  grunt.loadNpmTasks("grunt-mocha-test");
 
   // Project configuration.
   grunt.initConfig({
     clean: {
       coverage: {
-        src: ['lib-cov/']
+        src: ["lib-cov/"]
       }
     },
     copy: {
       test: {
-        src: ['test/**'],
-        dest: 'lib-cov/',
+        src: ["test/**"],
+        dest: "lib-cov/",
         expand: true
       },
       fixtures: {
-        src: ['fixtures/**'],
-        dest: 'lib-cov/',
+        src: ["fixtures/**"],
+        dest: "lib-cov/",
         expand: true
       }
     },
     blanket: {
       lib: {
-        src: ['lib/'],
-        dest: 'lib-cov/lib/'
+        src: ["lib/"],
+        dest: "lib-cov/lib/"
       },
       mock: {
-        src: ['mocks/'],
-        dest: 'lib-cov/mocks/'
+        src: ["mocks/"],
+        dest: "lib-cov/mocks/"
       }
     },
     mochaTest: {
-      'spec': {
+      spec: {
         options: {
-          reporter: 'spec',
+          reporter: "spec",
           // tests are quite slow as thy spawn node processes
           timeout: 10000
         },
-        src: ['lib-cov/test/**/*.js']
+        src: ["lib-cov/test/**/*.js"]
       },
-      'html-cov': {
+      "html-cov": {
         options: {
-          reporter: 'html-cov',
+          reporter: "html-cov",
           quiet: true,
-          captureFile: 'coverage.html'
+          captureFile: "coverage.html"
         },
-        src: ['lib-cov/test/**/*.js']
+        src: ["lib-cov/test/**/*.js"]
       },
-      'mocha-lcov-reporter': {
+      "mocha-lcov-reporter": {
         options: {
-          reporter: 'mocha-lcov-reporter',
+          reporter: "mocha-lcov-reporter",
           quiet: true,
-          captureFile: 'lcov.info'
+          captureFile: "lcov.info"
         },
-        src: ['lib-cov/test/**/*.js']
+        src: ["lib-cov/test/**/*.js"]
       },
-      'travis-cov': {
+      "travis-cov": {
         options: {
-          reporter: 'travis-cov'
+          reporter: "travis-cov"
         },
-        src: ['lib-cov/test/**/*.js']
+        src: ["lib-cov/test/**/*.js"]
       }
     },
     coveralls: {
@@ -72,13 +71,13 @@ module.exports = function(grunt) {
         force: true
       },
       all: {
-        src: 'lcov.info'
+        src: "lcov.info"
       }
     }
   });
 
   // Default task.
-  grunt.registerTask('build', ['clean', 'blanket', 'copy']);
-  grunt.registerTask('default', ['build', 'mochaTest']);
-  grunt.registerTask('ci', ['default', 'coveralls']);
+  grunt.registerTask("build", ["clean", "blanket", "copy"]);
+  grunt.registerTask("default", ["build", "mochaTest"]);
+  grunt.registerTask("ci", ["default", "coveralls"]);
 };

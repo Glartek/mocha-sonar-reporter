@@ -1,8 +1,8 @@
 {
-  "name": "mocha-sonar-reporter",
+  "name": "@glartek/mocha-sonar-reporter",
   "description": "Sonar friendly xunit reporter for Mocha",
-  "version": "0.1.6",
-  "homepage": "https://github.com/pghalliday/mocha-sonar-reporter",
+  "version": "0.1.7",
+  "homepage": "https://github.com/Glartek/mocha-sonar-reporter",
   "author": {
     "name": "Peter Halliday",
     "email": "pghalliday@gmail.com",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/pghalliday/mocha-sonar-reporter.git"
+    "url": "git://github.com/Glartek/mocha-sonar-reporter.git"
   },
   "bugs": {
-    "url": "https://github.com/pghalliday/mocha-sonar-reporter/issues"
+    "url": "https://github.com/Glartek/mocha-sonar-reporter/issues"
   },
   "license": "MIT",
   "main": "lib/Sonar.js",
   "engines": {
-    "node": ">= 0.10.4"
+    "node": ">= 8"
   },
   "scripts": {
     "test": "grunt",
@@ -30,19 +30,19 @@
     }
   },
   "devDependencies": {
-    "grunt-cli": "~0.1.13",
-    "grunt": "~0.4.2",
-    "chai": "~3.3.0",
-    "grunt-blanket": "~0.0.8",
-    "grunt-contrib-copy": "~0.8.0",
-    "grunt-contrib-clean": "~0.6.0",
+    "grunt-cli": "~1.3.2",
+    "grunt": "~1.0.4",
+    "chai": "~4.2.0",
+    "grunt-blanket": "~0.0.10",
+    "grunt-contrib-copy": "~1.0.0",
+    "grunt-contrib-clean": "~2.0.0",
     "travis-cov": "~0.2.5",
-    "mocha-lcov-reporter": "1.0.0",
-    "grunt-coveralls": "~1.0.0",
-    "grunt-mocha-test": "~0.12.7",
-    "mocha": "~2.3.3",
-    "sinon": "~1.17.1",
-    "sinon-chai": "~2.8.0"
+    "mocha-lcov-reporter": "1.3.0",
+    "grunt-coveralls": "~2.0.0",
+    "grunt-mocha-test": "~0.13.3",
+    "mocha": "~2.5.3",
+    "sinon": "~9.0.0",
+    "sinon-chai": "~3.5.0"
   },
   "keywords": [
     "mocha",
@@ -51,6 +51,6 @@
     "test"
   ],
   "dependencies": {
-    "mkdirp": "^0.5.0"
+    "mkdirp": "^1.0.3"
   }
 }
